@@ -23,7 +23,7 @@ def adb():
             time.sleep(2)
             os.system('adb shell input tap 1119 644') #点击斥候营地
             os.system('adb shell input tap 1231 865') #点击进入斥候营地
-            
+            time.sleep(0.2)
             os.system('adb shell input tap 1735 477') #点击第一个斥候
             time.sleep(2)
             os.system('adb shell input tap 1447 728') #点击地图探索
@@ -34,6 +34,7 @@ def adb():
             time.sleep(2)
             os.system('adb shell input tap 1119 644') #点击斥候营地
             os.system('adb shell input tap 1231 865') #点击进入斥候营地
+            time.sleep(0.2)
             os.system('adb shell input tap 1754 670') #点击第二个斥候
             time.sleep(2)
             os.system('adb shell input tap 1447 728') #点击地图探索
@@ -44,6 +45,7 @@ def adb():
             time.sleep(2)
             os.system('adb shell input tap 1119 644') #点击斥候营地
             os.system('adb shell input tap 1231 865') #点击进入斥候营地
+            time.sleep(0.2)
             os.system('adb shell input tap 1750 865') #点击第三个斥候
             time.sleep(2)
             os.system('adb shell input tap 1447 728') #点击地图探索
