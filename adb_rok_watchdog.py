@@ -4,7 +4,6 @@ import os
 import time
 import random
 from PIL import Image
-import pyperclip
 
 def click(x,y,r):
     axes_x=x+random.randint(-r,r)
@@ -12,12 +11,14 @@ def click(x,y,r):
     os.system('adb shell input tap '+str(axes_x)+' '+str(axes_y))
     return
 
+os.system('adb devices')
+os.system('adb shell am startservice ca.zgrs.clipper/.ClipboardService')
 while 1:
     player_name = []
     for line in open("player_name.txt"):
-        player_name = player_name + line
+        player_name = player_name + [line]
     time.sleep(15)
-    click() #防掉线
+    click(721.476，10) #防掉线
     time.sleep(10)
     click(1192,669,10)  #点联盟
     time.sleep(1)
@@ -36,9 +37,9 @@ while 1:
         click(744,157,4)    #点复制昵称
         click(997,141,30)   #点开
         click(1171,83,1)    #点关闭
-        if pyperclip.paste() in player_name:
+        if os.popen('adb shell am broadcast -a clipper.get').read()[92:-2] in player_name:
             click(1150,250,5)   #点勾
-            
-
+        else:
+            click(1042,250,5)   #点叉
     else:
-        break
+        pass
