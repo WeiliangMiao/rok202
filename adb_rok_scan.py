@@ -36,11 +36,13 @@ click(1171,83,1)    #点关闭
 last_name=[]
 for _ in range(300):
     click(415,476,5)
+    x=740
     for __ in range(10):
-        os.system('adb shell input tap 745 230 & input tap 742 230')    #点。。。
-        os.system('adb shell input tap 744 157 & input tap 745 156')    #点复制昵称
+        click(x,230,2)    #点。。。
+        click(x,157,4)    #点复制昵称
         click(900,200,5)
         if os.popen('adb shell am broadcast -a clipper.get').read()[92:-2]==last_name:
+            x=700
             continue
         else:
             last_name=os.popen('adb shell am broadcast -a clipper.get').read()[92:-2]
