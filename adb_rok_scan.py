@@ -8,6 +8,7 @@ def click(x,y,r):
     axes_x=x+random.randint(-r,r)
     axes_y=y+random.randint(-r,r)
     os.system('adb shell input tap '+str(axes_x)+' '+str(axes_y))
+    time.sleep(1)
     return
 
 os.system('adb devices')
@@ -32,7 +33,7 @@ click(744,157,4)    #点复制昵称
 player_name=player_name+'\n'+os.popen('adb shell am broadcast -a clipper.get').read()[92:-2]
 click(1171,83,1)    #点关闭
 
-for _ in range(10):
+for _ in range(300):
     click(415,476,5)
     click(745,230,2)    #点。。。
     click(744,157,4)    #点复制昵称
