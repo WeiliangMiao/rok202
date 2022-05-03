@@ -36,17 +36,17 @@ click(1171,83,1)    #点关闭
 last_name=[]
 for _ in range(300):
     click(415,476,5)
-    x=740
-    for __ in range(10):
-        click(x,230,2)    #点。。。
-        click(x,157,4)    #点复制昵称
+    x=[740,695,760,675,780]
+    for __ in range(5):
+        click(x[__],230,2)    #点。。。 
+        click(x[__],157,4)    #点复制昵称
         click(900,200,5)
-        if os.popen('adb shell am broadcast -a clipper.get').read()[92:-2]==last_name:
-            x=695
+        name=os.popen('adb shell am broadcast -a clipper.get').read()[92:-2]
+        if name==last_name:
             continue
         else:
-            last_name=os.popen('adb shell am broadcast -a clipper.get').read()[92:-2]
-            player_name=player_name+'\n'+os.popen('adb shell am broadcast -a clipper.get').read()[92:-2]
+            last_name=name
+            player_name=player_name+'\n'+last_name
             break
     click(1171,83,1)    #点关闭
 
