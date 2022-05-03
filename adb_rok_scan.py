@@ -40,11 +40,12 @@ for _ in range(300):
         click(745,230,2)    #点。。。
         click(744,157,4)    #点复制昵称
         click(900,200,5)
-        player_name=player_name+'\n'+os.popen('adb shell am broadcast -a clipper.get').read()[92:-2]
         if os.popen('adb shell am broadcast -a clipper.get').read()[92:-2]==last_name:
             continue
         else:
             last_name=os.popen('adb shell am broadcast -a clipper.get').read()[92:-2]
+            player_name=player_name+'\n'+os.popen('adb shell am broadcast -a clipper.get').read()[92:-2]
+            break
     click(1171,83,1)    #点关闭
 
 f = open('player_name.txt', "w", encoding="utf-8")
