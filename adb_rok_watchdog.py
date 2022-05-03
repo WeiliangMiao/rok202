@@ -19,7 +19,7 @@ while 1:
     for line in open("player_name.txt"):
         player_name = player_name + [line.replace('\n','')]
     time.sleep(15)
-    click(721.476,10) #防掉线
+    click(721,476,10) #防掉线
     time.sleep(10)
     click(1192,669,10)  #点联盟
     click(1142,554,15)  #点设置
