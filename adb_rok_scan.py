@@ -42,7 +42,7 @@ for _ in range(300):
         click(x,157,4)    #点复制昵称
         click(900,200,5)
         if os.popen('adb shell am broadcast -a clipper.get').read()[92:-2]==last_name:
-            x=700
+            x=695
             continue
         else:
             last_name=os.popen('adb shell am broadcast -a clipper.get').read()[92:-2]
